@@ -1,0 +1,32 @@
+<!--pages/listPage/listPage.wxml-->
+<view class="title">
+    <text>LIST</text>
+</view>
+
+<view class="">
+  <text>选择：</text>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{objectArray}}" style="border:1px solid gray;display:inline;" range-key="name">
+    <view class="select">
+        <text>{{objectArray[index].name}}</text>
+    </view>
+  </picker>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{objectArray}}" style="border:1px solid gray;display:inline;" range-key="name">
+    <view class="select">
+        <text>{{objectArray[index+1].name}}</text>
+    </view>
+  </picker>
+</view>
+
+<view>
+    <picker-view indicator-style="height: 40px;" style="width: 100%; height: 50px; border:1px solid gray;" value="{{value}}" bindchange="bindChange">
+        <picker-view-column>
+            <view wx:for="{{array}}" wx:key="" style="text-align:center; line-height: 40px">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+            <view wx:for="{{objectArray}}" wx:key="id" style="line-height: 40px;text-align:center;">{{item.name}}</view>
+        </picker-view-column>
+    </picker-view>
+</view>
+<view class="list" wx:for="{{objectArray}}" wx:key="id">{{item.name}}</view>
+<view bindtap="outer_view" style="font-size:55rpx;">outer<text catchtap="middel_view" style="display:block;margin-left:22rpx;">middle<text catchtap="inner_view" style="display:block;margin-left:22rpx;">inner</text></text></view>
+

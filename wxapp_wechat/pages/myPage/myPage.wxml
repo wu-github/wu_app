@@ -1,0 +1,29 @@
+<!--pages/myPage/myPage.wxml-->
+<view>
+    <view class="userinfo">
+        <image class="userinfo-avatar" background-size="cover"              src="{{userInfo.avatarUrl}}"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}           </text>
+    </view>
+    <view class="left">
+        <text>居住地：{{userInfo.province}}-{{userInfo.city}}            </text>
+    </view>
+    <view class="left">   
+         <text>性别：{{gender}}</text>
+    </view>
+<!-- map.wxml -->
+<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="15" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300px; margin: 11px 0;"></map>
+</view>
+
+<!-- swiper -->
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+  </block>
+</swiper>
+<button bindtap="changeIndicatorDots"> indicator-dots </button>
+<button bindtap="changeAutoplay"> autoplay </button>
+<slider bindchange="intervalChange" show-value min="2000" max="4000"/> interval
+<slider bindchange="durationChange" show-value min="400" max="600"/> duration

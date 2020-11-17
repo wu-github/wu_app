@@ -1,0 +1,45 @@
+/* pages/listPage/listPage.wxss */
+.btn {
+    width: 33.33%;
+    display: inline-block;
+}
+.view_title {
+    text-align: center;
+    margin-top: 10px;
+}
+.title {
+    font-weight: bold;
+    margin-left:134rpx;
+}
+.right {
+    float: right;
+    color: yellowgreen;
+    margin-right:22rpx;
+}
+.select_layer {
+    border: 1px solid gray;
+    margin-top: 5px;
+    width: 32.5%;
+    display: inline-block;
+    height: 200px;
+    overflow: hidden;
+}
+.classes {
+    text-align: center;
+    margin-top: 18rpx; 
+}
+.selected {
+    background-color: greenyellow;
+}
+.btn1_view {
+    text-align: center;
+}
+.btn1 {
+    width: 40%;
+    display: inline-block;
+    margin:0 22rpx;
+
+}
+.product_view {
+    margin: 30rpx 44rpx;
+}

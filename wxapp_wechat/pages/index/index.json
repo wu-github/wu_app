@@ -1,0 +1,22 @@
+{
+    "pages": [
+
+  ],
+
+    "tabBar": {
+        "color":"black",
+        "selectedColor": "#3cc51f",
+        "backgroundColor":"",
+        "list": [{
+            "pagePath": "pages/index/index",
+             "text": "MY_PAGE",
+             "iconPath": "",
+            "selectedIconPath": ""
+            },{
+            "pagePath": "pages/listPage/listPage",
+            "text": "LIST",
+            "iconPath": "",
+            "selectedIconPath": ""
+            }]
+    }
+}

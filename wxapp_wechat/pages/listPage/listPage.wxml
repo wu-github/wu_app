@@ -1,0 +1,33 @@
+<!--pages/listPage/listPage.wxml-->
+<view class="view_title">
+    <!--<button class="btn">b1</button>
+    <button class="btn">b1</button>
+    <button class="btn">b1</button>-->
+    <text class="title">LIST</text>
+    <text bindtap="select" class="right">select</text>
+</view>
+<view class="" style="display:{{select_status}};">
+    <scroll-view class="select_layer" scroll-y="true">
+        供应商：
+        <view id="{{item.id}}" bindtap="supp_select" class="classes" wx:for="{{suppliers}}" wx:key="id">{{item.name}}</view>
+    </scroll-view>
+     <scroll-view class="select_layer" scroll-y="true">
+        一级分类：
+        <view id="{{item.id}}" data-class="{{item}}" bindtap="first_select" class="classes {{selectClass==(item.id)?'selected':''}}" wx:for="{{firstClasses}}" wx:key="id">{{item.className}}</view>
+    </scroll-view>
+     <scroll-view class="select_layer" scroll-y="true">
+        二级分类：
+        <view id="{{item.id}}" bindtap="second_select" class="classes {{selectClass==(item.id)?'selected':''}}" wx:for="{{secondClasses}}" wx:key="id">{{item.className}}</view>
+    </scroll-view>
+    <view class="btn1_view">
+        <button class="btn1" bindtap="cancel">cancel</button>
+        <button class="btn1" bindtap="ok">ok</button>
+    </view>
+</view>
+<view>
+    <view id="{{item.id}}" class="product_view" bindtap="toDetail" wx:for="{{selectProduct}}" wx:key="id">
+        <text>{{item.courseName}}</text>
+        <text> 价格：{{item.price}}</text>
+    </view>
+</view>
+<include src="/common/login/common_login"/>

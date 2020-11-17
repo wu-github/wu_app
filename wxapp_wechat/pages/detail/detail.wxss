@@ -1,0 +1,27 @@
+/* pages/detail/detail.wxss */
+.view_title {
+    text-align: center;
+    margin-top: 10px;
+}
+.title {
+    font-weight: bold;
+}
+.content {
+    margin: 30rpx 44rpx;
+}
+.content view {
+    margin-top: 44rpx; 
+}
+.property {
+    margin-left: 22rpx;
+}
+.btn {
+    /*display: inline-block;
+    width: 50%;*/
+    font-size: 13px;
+}
+.toBuy {
+    position: fixed;
+    bottom: 2rpx;
+    width:100%;
+}

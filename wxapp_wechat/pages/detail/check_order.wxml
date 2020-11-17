@@ -1,0 +1,5 @@
+<!--pages/detail/check_order.wxml-->
+<text>pages/detail/check_order.wxml</text>
+<view>
+    <button class="toBuy" bindtap="toBuy">去支付</button>
+</view>

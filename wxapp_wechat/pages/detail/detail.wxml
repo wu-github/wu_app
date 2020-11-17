@@ -1,0 +1,35 @@
+<!--pages/detail/detail.wxml-->
+<view class="view_title">
+    <!--<button class="btn">b1</button>
+    <button class="btn">b1</button>
+    <button class="btn">b1</button>-->
+    <text class="title">DETAIL</text>
+</view>
+<view class="content">
+    <view>
+        <text>课程：{{content.courseName}}</text>
+        <text> 价格：￥{{content.price}}</text>
+    </view>
+    <view>
+        <text>简介：{{content.briefing}}</text>
+    </view>
+</view>
+<view class="content">
+    <button class="btn" bindtap="skus">选择规格：</button>
+    <!--属性选择-->
+    <view style="display:{{sku_status}};">
+        <text>当前价格：￥{{select_price?select_price:0}}</text>
+        <view wx:for="{{propertyClasses}}" wx:key="propertyClassCode" wx:for-item="propertyClass">
+            <text>{{propertyClass.propertyClassName}}</text>
+            <radio-group id="{{propertyClass.propertyClassCode}}" bindchange="select_property">
+            <radio value="{{property.propertyCode}}" class="property" color="limegreen" wx:for="{{propertyClass.propertyList}}" wx:key="propertyCode" wx:for-item="property">
+                <text>{{property.propertyName}}</text>
+            </radio>
+            </radio-group>
+        </view>
+    </view>
+</view>
+<view>
+    <button class="toBuy" bindtap="toBuy">立即报名</button>
+</view>
+<include src="/common/login/common_login"/>

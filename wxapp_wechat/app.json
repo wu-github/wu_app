@@ -1,0 +1,35 @@
+{
+  "pages":[
+     "pages/index/index",
+     "pages/logs/logs",
+     "pages/myPage/myPage",
+     "pages/listPageDemo/listPageDemo",
+     "pages/listPage/listPage",
+     "pages/detail/detail",
+     "pages/detail/select_linkers",
+     "pages/register/register",
+     "pages/detail/check_order"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#eee",
+    "navigationBarTitleText": "my_wxapp",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "green",
+    "backgroundColor": "",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "INDEX",
+      "iconPath": "",
+      "selectedIconPath": ""
+    },{
+      "pagePath": "pages/listPage/listPage",
+      "text": "LIST",
+      "iconPath": "",
+      "selectedIconPath": ""
+    }]
+  }
+}

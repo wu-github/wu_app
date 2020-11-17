@@ -1,0 +1,6 @@
+/* pages/detail/check_order.wxss */
+.toBuy {
+    position: fixed;
+    bottom: 2rpx;
+    width:100%;
+}

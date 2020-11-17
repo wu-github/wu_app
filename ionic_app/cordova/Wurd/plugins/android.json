@@ -1,0 +1,38 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-camera": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "com.wu.wurd"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.wu.wurd"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.wu.wurd"
+    },
+    "cordova-plugin-fullscreen": {
+      "PACKAGE_NAME": "com.wu.wurd"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.wu.wurd"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.wu.wurd"
+    },
+    "cordova-plugin-file-opener2": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "com.wu.wurd"
+    },
+    "cordova-plugin-cache-clear": {
+      "PACKAGE_NAME": "com.wu.wurd"
+    }
+  },
+  "dependent_plugins": {}
+}

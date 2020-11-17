@@ -1,0 +1,41 @@
+/* pages/detail/select_linkers.wxss */
+.view_title {
+    text-align: center;
+    margin-top: 10px;
+}
+.title {
+    font-weight: bold;
+}
+.content {
+    margin: 30rpx 44rpx;
+}
+.name {
+    display:block;
+    margin-top:22rpx;
+}
+.linker_view {
+    margin: 22rpx;
+    margin-left: 12rpx;
+}
+.linker_text {
+    margin-left:32rpx;
+}
+.toBuy {
+    position: fixed;
+    bottom: 2rpx;
+    width:100%;
+}
+.add_linker {
+    width:26%;
+    font-size:11px;
+    float:right;
+}
+.linker_info {
+    margin-top: 45rpx;
+    margin-left: 44rpx;
+}
+.btn1 {
+    display: inline-block; 
+    width:42%;
+    margin:0 26rpx;
+}

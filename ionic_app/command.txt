@@ -1,0 +1,19 @@
+
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore app-release.apk wurd
+ionic capacitor build android --prod --release
+
+
+
+zipalign -v 4 app-debug1.apk app.apk
+
+
+keytool -genkey -v -keystore my-release-key.keystore -alias wurd -keyalg RSA -keysize 2048 -validity 10000
+
+
+ionic capacitor copy android
+
+ionic capacitor add android
+
+
+192.168.43.180

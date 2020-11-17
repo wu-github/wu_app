@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <!--meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"-->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Wurd</title>
+    </head>
+    <body>
+        <div>
+		
+			<div id="index-header" class="index-header">
+				<input id="indexUrl" class="index-header-text" type="text" value=""/>
+				<input id="indexUrlTo" class="index-header-btn" type="button" value=">"/>
+				<input id="indexUrlToNew" class="index-header-btn" type="button" value=">>"/>
+			</div>
+			<div class="index-content">
+				<div>
+					<iframe id="index-iframe" title="index-iframe" src="">
+					</iframe>
+                </div>
+                <div id="index-logo">
+                    <img id="index-logo-img" src="img/logo.png"/>
+                </div>
+                <div id="index-config">
+                    <input id="index-config-server" type="text"/>
+                    <div>
+                        <input id="index-radio-href" name="iframeOrNot" value="0" checked type="radio"/>
+                        <label for="index-radio-href">href</label>
+                        <input id="index-radio-iframe" name="iframeOrNot" value="1" type="radio"/
+                        ><label for="index-radio-iframe">iframe</label>
+                    </div>
+                    <div class="index-btn">
+                        <input id="index-cancle" type="button" value="Cancle">
+                        <input id="index-save" type="button" value="Save">
+                    </div>
+                </div>
+			</div>
+			<div id="index-footer" class="index-footer">
+				<input id="indexBack" class="index-footer-btn" type="button" value="<"/>
+				<input id="indexForward" class="index-footer-btn" type="button" value=">"/>
+			</div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

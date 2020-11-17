@@ -1,0 +1,16 @@
+/* pages/listPage/listPage.wxss */
+.title {
+    text-align: center;
+    font-size: 22;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.select {
+    text-align: center;
+}
+
+.list {
+    text-align: center;
+    margin: 10px;
+}

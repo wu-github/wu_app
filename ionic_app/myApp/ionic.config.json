@@ -1,0 +1,7 @@
+{
+  "name": "com.wu.Wurd",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

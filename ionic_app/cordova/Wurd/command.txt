@@ -1,0 +1,1 @@
+cordova build android --verbose --release --keystore="./myKey.keystore" --storePassword=123456 --alias=wurd

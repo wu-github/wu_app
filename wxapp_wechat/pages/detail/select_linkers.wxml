@@ -1,0 +1,149 @@
+<!--pages/detail/select_linkers.wxml-->
+<view class="view_title">
+    <!--<button class="btn">b1</button>
+    <button class="btn">b1</button>
+    <button class="btn">b1</button>-->
+    <text class="title">SELECT_LINKERS</text>
+</view>
+<view class="content">
+    <text class="name">课程：{{product_name}}</text>
+    <text class="name">规格：{{sku}}</text>
+    <text class="name"> 价格：{{totalPrice}}</text>
+    <view>
+        <text class="name">说明：</text>
+        <text>该课程需要选择{{adultNum}}家长{{childNum}}孩子</text>
+    </view>
+</view>
+<!--联系人信息-->
+<view class="content">
+    <view>
+        <button catchtap="show_linkers">选择信息：</button>
+    </view>
+    <view style="display:{{linker_view_status}};">
+        <view>
+            <button catchtap="add_linker" class="add_linker">添加信息</button>
+            <text style="margin-top:10px;display:block">孩子信息：</text>
+            <checkbox-group bindchange="select_child">
+            <view id="{{linker.id}}" class="linker_view" style="" wx:for="{{linkers}}" wx:key="" wx:for-item="linker">
+                <checkbox value="{{linker.id}}" wx:if="{{linker.infoType=='x'}}">
+                    <text class="linker_text" id="{{linker.id}}" data-type="{{linker.infoType}}" catchtap="modify_linker">{{linker.name}}</text>
+                </checkbox>    
+            </view>
+            </checkbox-group>
+            <text style="margin-top:10px;display:block">家长信息：</text>
+            <checkbox-group bindchange="select_linker">
+            <view id="{{linker.id}}" class="linker_view" style="" wx:for="{{linkers}}" wx:key="" wx:for-item="linker">
+                <checkbox value="{{linker.id}}" wx:if="{{linker.infoType=='c'}}">
+                    <text class="linker_text" id="{{linker.id}}" catchtap="modify_linker">{{linker.name}}</text>
+                </checkbox>    
+            </view>
+            </checkbox-group>
+        </view>
+    </view>
+</view>
+<!--信息-->
+<view style="background:rgba(0,0,0,0.6);position:fixed;top:0;left:0;width:100%;height:100%;" wx:if="{{linker_info_view}}">
+    <view>
+        <icon style="float:right;margin:10px;" catchtap="cancel" type="clear"></icon>
+    </view>
+    <!--编辑信息：-->
+    <view class="content" style="color:white;margin-top:50rpx;">
+        <view class="" wx:if="{{linker}}">
+            <view>编辑信息：</view>
+            <form data-id="{{linker.id}}" bindsubmit="linker_info_submit">
+                <view class="linker_info">姓名：<input name="name" value="{{linker.name}}" style="border:0.1px solid gray;display:inline-block;" />
+                </view>
+<view class="linker_info">*生日：
+                    <picker-view indicator-style="height: 33px;" style="width: 75%; height: 33px; display:inline-block;" value="{{date_value}}" name="birth_date" bindchange="birth_date_change">
+                        <picker-view-column>
+                        <view wx:for="{{years}}" wx:key="" style="line-height: 33px">{{item}}年</view>
+                        </picker-view-column>
+                        <picker-view-column>
+                        <view wx:for="{{months}}" wx:key="" style="line-height: 33px">{{item}}月</view>
+                        </picker-view-column>
+                        <picker-view-column>
+                        <view wx:for="{{days}}" wx:key="" style="line-height: 33px">{{item}}日</view>
+                        </picker-view-column>
+                    </picker-view>
+                </view>
+                <view class="linker_info">*性别：
+                    <radio-group style="display:inline-block" name="sex" bindchange="select_sex">
+                        <radio checked="{{linker.gender=='男生'}}" value="男生">男</radio>
+                        <radio checked="{{linker.gender=='女生'}}" value="女生">女</radio>
+                    </radio-group>
+                </view>
+                <view wx:if="{{certificate=='1'}}" class="linker_info">*{{certificateTypeName}}：
+                    <input wx:if="{{certificateType=='0'}}" name="certificate" value="{{linker.cardNo}}" style="border:0.1px solid gray;display:inline-block;" />
+                    <input wx:if="{{certificateType=='1'}}" name="certificate" value="{{linker.passportNumber}}" style="border:0.1px solid gray;display:inline-block;" />
+                    <input wx:if="{{certificateType=='2'}}" name="certificate" value="{{linker.hkNumber}}" style="border:0.1px solid gray;display:inline-block;" />
+                    <input wx:if="{{certificateType=='3'}}" name="certificate" value="{{linker.twNumber}}" style="border:0.1px solid gray;display:inline-block;" />
+                </view>
+                <view wx:if="{{linker_type=='x'}}" class="linker_info">
+                    <view>*就读学校：
+                        <input name="shcool" value="{{linker.shcool}}" style="border:0.1px solid gray;display:inline-block;" />
+                    </view>
+                    <view>就读班级： 
+                        <input name="grade" value="{{linker.grade}}" style="border:0.1px solid gray;display:inline-block;margin-left:20rpx;" />
+                    </view>
+                </view>
+                <view style="margin-top:55rpx;text-align:center;">
+                    <button class="btn1" formType="submit">保存</button>
+                </view>
+            </form>
+        </view>
+        <!--添加信息：-->
+        <view class="" wx:else>
+            <view>添加信息：</view>
+            <form bindsubmit="linker_info_submit" bindreset="bindreset">
+                <view class="linker_info">人员类型:
+                <radio-group style="display:inline-block" name="linker_type" bindchange="select_linker_type">
+                        <radio checked="{{select_child}}" value="x">孩子</radio>
+                        <radio value="c">家长</radio>
+                    </radio-group>
+                </view>
+                <view class="linker_info">*姓名：<input name="name" style="border:0.1px solid gray;display:inline-block;" />
+                </view>
+                <view class="linker_info">*生日：
+                    <picker-view indicator-style="height: 33px;" style="width: 75%; height: 33px; display:inline-block;" value="{{date_value}}" name="birth_date" bindchange="birth_date_change">
+                        <picker-view-column>
+                        <view wx:for="{{years}}" wx:key="" style="line-height: 33px">{{item}}年</view>
+                        </picker-view-column>
+                        <picker-view-column>
+                        <view wx:for="{{months}}" wx:key="" style="line-height: 33px">{{item}}月</view>
+                        </picker-view-column>
+                        <picker-view-column>
+                        <view wx:for="{{days}}" wx:key="" style="line-height: 33px">{{item}}日</view>
+                        </picker-view-column>
+                    </picker-view>
+                </view>
+                <view class="linker_info">*性别：
+                    <radio-group style="display:inline-block" name="sex" bindchange="select_sex">
+                        <radio value="男生">男</radio>
+                        <radio value="女生">女</radio>
+                    </radio-group>
+                </view>
+                <view wx:if="{{certificate=='1'}}" class="linker_info">*{{certificateTypeName}}：
+                    <input wx:if="{{certificateType=='0'}}" name="certificate" value="{{linker.cardNo}}" style="border:0.1px solid gray;display:inline-block;" />
+                    <input wx:if="{{certificateType=='1'}}" name="certificate" value="{{linker.passportNumber}}" style="border:0.1px solid gray;display:inline-block;" />
+                    <input wx:if="{{certificateType=='2'}}" name="certificate" value="{{linker.hkNumber}}" style="border:0.1px solid gray;display:inline-block;" />
+                    <input wx:if="{{certificateType=='3'}}" name="certificate" value="{{linker.twNumber}}" style="border:0.1px solid gray;display:inline-block;" />
+                </view>
+                <view wx:if="{{linker_type=='x'}}" class="linker_info">
+                    <view>*就读学校：
+                        <input name="school" style="border:0.1px solid gray;display:inline-block;" />
+                    </view>
+                    <view>就读班级： 
+                        <input name="grade" style="border:0.1px solid gray;display:inline-block;margin-left:20rpx;" />
+                    </view>
+                </view>
+                <view style="margin-top: 55rpx;">
+                    <button class="btn1" form-type="reset">重置</button>
+                    <button class="btn1" formType="submit">保存</button>
+                </view>
+            </form>
+        </view>
+    </view>
+</view>
+<view>
+    <button class="toBuy" disabled="{{toBuy_status}}" bindtap="toBuy">确认订单</button>
+</view>
