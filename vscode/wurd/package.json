@@ -19,7 +19,30 @@
 				"command": "wurd.helloWorld",
 				"title": "Hello World"
 			}
-		]
+		],
+		"keybindings": [
+            {
+                "command": "wurd.helloWorld",
+                "key": "ctrl+f10",
+                "mac": "cmd+f10",
+                "when": "editorTextFocus"
+            }
+		],
+		"menus": {
+            "editor/context": [
+                {
+                    "when": "editorFocus",
+                    "command": "wurd.helloWorld",
+                    "group": "navigation"
+                }
+			],
+			"editor/title/context": [
+                {
+                    "command": "wurd.helloWorld",
+                    "group": "navigation"
+                }
+            ]
+        }
 	},
 	"scripts": {
 		"lint": "eslint .",
